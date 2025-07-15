@@ -1,26 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #2B6CB0;
+  --color-accent: #7B61FF;
+  --color-success: #38A169;
+  --color-muted: #6B7280;
+  --color-background: #EDF2F7;
+  --color-foreground: #1A202C;
+
+  /* Breakpoints */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+  --screen-3xl: 1920px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+      font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @screen sm {
+    .container {
+      max-width: 100%;
+    }
+  }
+
+  @screen md {
+    .container {
+      max-width: 600px;
+    }
+  }
+
+  @screen lg {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @screen xl {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @screen 2xl {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @screen 3xl {
+    .container {
+      max-width: 1320px;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .wrapper {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
