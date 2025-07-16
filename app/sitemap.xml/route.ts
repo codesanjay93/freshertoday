@@ -1,3 +1,5 @@
+// app/sitemap.xml/route.ts
+
 export async function GET() {
   const baseUrl = 'https://www.fresherstoday.in';
   const now = new Date().toISOString().split('T')[0];
@@ -27,6 +29,7 @@ export async function GET() {
   });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join('\n')}
 </urlset>`;
@@ -34,7 +37,7 @@ ${urls.join('\n')}
   return new Response(sitemap, {
     headers: {
       'Content-Type': 'application/xml',
-      'X-Robots-Tag': 'index, follow', // ✅ SEO-friendly header
+      'X-Robots-Tag': 'index, follow',
     },
   });
 }
