@@ -15,11 +15,11 @@ export const metadata = {
     title: "Sanjay Achari – Founder of Freshertoday",
     description:
       "Discover the story of Sanjay Achari, the founder behind Freshertoday — India's emerging platform for fresher jobs and internships.",
-    url: "https://www.fresherstoday.in/sanjay-achari",
+    url: "https://www.freshertoday.in/sanjay-achari",
     type: "profile",
     images: [
       {
-        url: "https://www.fresherstoday.in/sanjay-achari-cover.jpeg", // Replace with actual image
+        url: "https://www.freshertoday.in/sanjay-achari-cover.jpeg", // Replace with actual image
         width: 1200,
         height: 630,
         alt: "Sanjay Achari - Founder of Freshertoday",
@@ -32,10 +32,10 @@ export const metadata = {
     title: "Sanjay Achari – Founder & CEO of Freshertoday",
     description:
       "Sanjay Achari is building Freshertoday to help students find quality internships and jobs across India.",
-    images: ["https://www.fresherstoday.in/sanjay-achari-cover.jpeg"], // Replace with actual image
+    images: ["https://www.freshertoday.in/sanjay-achari-cover.jpeg"], // Replace with actual image
   },
   alternates: {
-    canonical: "https://www.fresherstoday.in/sanjay-achari",
+    canonical: "https://www.freshertoday.in/sanjay-achari",
   },
 };
 
@@ -56,17 +56,17 @@ const page = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Sanjay Achari",
-            url: "https://www.fresherstoday.in/sanjay-achari",
-            image: "https://www.fresherstoday.in/sanjay-achari-cover.jpeg",
+            url: "https://www.freshertoday.in/sanjay-achari",
+            image: "https://www.freshertoday.in/sanjay-achari-cover.jpeg",
             jobTitle: "Founder & CEO",
             worksFor: {
               "@type": "Organization",
               name: "Freshertoday",
-              url: "https://www.fresherstoday.in",
+              url: "https://www.freshertoday.in",
             },
             sameAs: [
               "https://www.linkedin.com/in/sanjayachari",
-              "https://www.instagram.com/fresherstoday.in",
+              "https://www.instagram.com/freshertoday.in",
               "https://twitter.com/Freshertoday",
             ],
           }),

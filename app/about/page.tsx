@@ -13,11 +13,11 @@ export const metadata = {
     title: "About Freshertoday | India’s Job & Internship Platform for Freshers",
     description:
       "Freshertoday is a startup helping freshers get their first job or internship. Learn about our mission and story.",
-    url: "https://www.fresherstoday.in/about",
+    url: "https://www.freshertoday.in/about",
     type: "website",
     images: [
       {
-        url: "https://www.fresherstoday.in/logo.png",
+        url: "https://www.freshertoday.in/logo.png",
         width: 1200,
         height: 630,
         alt: "Freshertoday Logo",
@@ -30,18 +30,18 @@ export const metadata = {
     title: "About Freshertoday | India’s Job & Internship Platform",
     description:
       "We help students and fresh graduates get discovered by the right companies. Learn who we are.",
-    images: ["https://www.fresherstoday.in/logo.png"],
+    images: ["https://www.freshertoday.in/logo.png"],
   },
   publisher: {
     "@type": "Organization",
     name: "Freshertoday",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.fresherstoday.in/logo.png",
+      url: "https://www.freshertoday.in/logo.png",
     },
   },
   alternates: {
-    canonical: "https://www.fresherstoday.in/about",
+    canonical: "https://www.freshertoday.in/about",
   },
 };
 
