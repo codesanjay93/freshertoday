@@ -1,6 +1,7 @@
 'use client'
 
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -20,10 +21,11 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="/about" className="hover:text-[#005250]">About Us</a></li>
-              <li><a href="/contact" className="hover:text-[#005250]">Contact</a></li>
-              <li><a href="/privacy" className="hover:text-[#005250]">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-[#005250]">Terms of Service</a></li>
+              <li><Link href="/about" title="Learn more about Freshertoday" className="hover:text-[#005250]">About Us</Link></li>
+              <li><Link href="/sanjay-achari" title="Meet the founder Sanjay Achari" className="hover:text-[#005250]">Founder</Link></li>
+              <li><Link href="/contact" title="Contact Freshertoday team" className="hover:text-[#005250]">Contact</Link></li>
+              <li><Link href="/privacy" title="Privacy Policy of Freshertoday" className="hover:text-[#005250]">Privacy Policy</Link></li>
+              <li><Link href="/terms" title="Terms of Service for using Freshertoday" className="hover:text-[#005250]">Terms of Service</Link></li>
             </ul>
           </div>
 
@@ -31,9 +33,10 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Resources</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="/jobs" className="hover:text-[#005250]">Browse Jobs</a></li>
-              <li><a href="/internships" className="hover:text-[#005250]">Internships</a></li>
-              <li><a href="/certificate" className="hover:text-[#005250]">Get Certificate</a></li>
+              <li><Link href="/coming-soon" title="Browse jobs for freshers" className="hover:text-[#005250]">Browse Jobs</Link></li>
+              <li><Link href="/internships" title="Explore internship listings" className="hover:text-[#005250]">Internships</Link></li>
+              <li><Link href="/coming-soon" title="Get your internship certificate" className="hover:text-[#005250]">Get Certificate</Link></li>
+              <li><Link href="/learn-more" title="Why internships are important for freshers" className="hover:text-[#005250]">Why Internships Matter</Link></li>
             </ul>
           </div>
 
@@ -41,10 +44,18 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-500 hover:text-[#005250]"><Facebook className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-500 hover:text-[#005250]"><Twitter className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-500 hover:text-[#005250]"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="text-gray-500 hover:text-[#005250]"><Linkedin className="w-5 h-5" /></a>
+              <Link href="#" title="Follow us on Facebook" className="text-gray-500 hover:text-[#005250]">
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link href="#" title="Follow us on Twitter" className="text-gray-500 hover:text-[#005250]">
+                <Twitter className="w-5 h-5" />
+              </Link>
+              <Link href="#" title="Follow us on Instagram" className="text-gray-500 hover:text-[#005250]">
+                <Instagram className="w-5 h-5" />
+              </Link>
+              <Link href="https://www.linkedin.com/company/freshertoday" title="Connect with us on LinkedIn" className="text-gray-500 hover:text-[#005250]">
+                <Linkedin className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </div>

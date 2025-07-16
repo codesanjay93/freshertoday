@@ -2,7 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Freshertoday | Internships & Jobs for Freshers in India",
+  title: "freshertoday | Internships & Jobs for Freshers in India",
   description:
     "Freshertoday helps freshers in India find high-quality jobs and internships with ease. Apply directly or via trusted sources — curated, simple, and free.",
   keywords:
@@ -17,10 +17,10 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.fresherstoday.in/og-image.png",
+        url: "https://www.fresherstoday.in/logo.png",
         width: 1200,
         height: 630,
-        alt: "Freshertoday Job Board",
+        alt: "freshertoday Job Board",
       },
     ],
   },
@@ -30,11 +30,11 @@ export const metadata = {
     title: "Freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Browse quality internships and fresher jobs. Built for Indian students and early professionals.",
-    image: "https://www.fresherstoday.in/og-image.png",
+    image: "https://www.fresherstoday.in/logo.png",
   },
   publisher: {
     "@type": "Organization",
-    name: "Freshertoday",
+    name: "freshertoday",
     logo: {
       "@type": "ImageObject",
       url: "https://www.fresherstoday.in/logo.png",
@@ -71,7 +71,7 @@ export default function RootLayout({
 
         {/* ✅ Favicon & App Icons */}
         <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
 
         {/* ✅ Open Graph */}
         <meta property="og:title" content={metadata.openGraph.title} />

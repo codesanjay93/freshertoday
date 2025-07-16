@@ -79,3 +79,25 @@
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
+@keyframes delayedWiggle {
+  0%, 80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(10deg);
+  }
+  95% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.delayed-wiggle-bell {
+  display: inline-block;
+  animation: delayedWiggle 2s ease-in-out infinite;
+}

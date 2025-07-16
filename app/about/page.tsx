@@ -1,3 +1,7 @@
+import About from "../components/about/About";
+import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
+
 // app/about/page.tsx
 export const metadata = {
   title: "About Us – Freshertoday",
@@ -44,18 +48,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-teal-900 to-teal-700 px-4">
-      <div className="max-w-2xl text-center text-white py-16">
-        <h1 className="text-4xl font-bold mb-6">About Freshertoday</h1>
-        <p className="text-lg leading-relaxed opacity-90">
-          Freshertoday is a bootstrapped startup founded by Sanjay with one mission: 
-          to help freshers in India land real jobs and internships without all the noise.
-          <br /><br />
-          We carefully curate high-quality listings so you can filter, apply, and get hired fast — whether you re a student or recent graduate.
-          <br /><br />
-          Your career journey starts here. No fluff. Just real opportunities.
-        </p>
-      </div>
-    </main>
+    <div>
+      <Navbar />
+      <About />
+      <Footer />
+    </div>
   );
 }
