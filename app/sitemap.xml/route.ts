@@ -1,7 +1,7 @@
 // app/sitemap.xml/route.ts
 
 export async function GET() {
-  const baseUrl = 'https://www.fresherstoday.in';
+  const baseUrl = 'https://www.freshertoday.in';
   const now = new Date().toISOString().split('T')[0];
 
   const staticRoutes = [
