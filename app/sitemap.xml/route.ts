@@ -1,8 +1,18 @@
 export async function GET() {
-  const baseUrl = 'https://www.freshertoday.in';
+  const baseUrl = 'https://www.fresherstoday.in';
   const now = new Date().toISOString().split('T')[0];
 
-  const staticRoutes = ['', 'about', 'contact'];
+  const staticRoutes = [
+    '', // homepage
+    'about',
+    'contact',
+    'internships',
+    'learn-more',
+    'privacy',
+    'terms',
+    'sanjay-achari',
+    'coming-soon',
+  ];
 
   const urls = staticRoutes.map((slug) => {
     const path = slug ? `/${slug}` : '';
