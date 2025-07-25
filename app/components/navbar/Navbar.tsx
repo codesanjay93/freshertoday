@@ -11,10 +11,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Blogs", href: "/blogs", title: "Read latest career blogs on Freshertoday" },
-    { name: "Internships", href: "/internships", title: "Browse internships for freshers" },
-    { name: "For Companies", href: "/for-companies", title: "Partner with Freshertoday" },
-    { name: "Login", href: "/login", title: "Login to your Freshertoday account" },
+    {
+      name: "Blogs",
+      href: "/blogs",
+      title: "Read latest career blogs on Freshertoday",
+    },
+    { name: "Internships", href: "/coming-soon", title: "Coming soon" },
+    { name: "For Companies", href: "/coming-soon", title: "Coming soon" },
+    {
+      name: "Login",
+      href: "/login",
+      title: "Login to your Freshertoday account",
+    },
   ];
 
   return (
@@ -22,7 +30,9 @@ export default function Navbar() {
       {/* 📢 Announcement (Hidden on /internships) */}
       {pathname !== "/internships" && (
         <div className="w-full bg-[#fef9c3] text-[#1f2937] text-sm sm:text-base text-center py-2 px-4 border-b border-yellow-300 font-medium flex justify-center items-center gap-2">
-          <span className="delayed-wiggle-bell text-red-500 font-bold text-lg">🔔</span>
+          <span className="delayed-wiggle-bell text-red-500 font-bold text-lg">
+            🔔
+          </span>
           <span>We&#39;re hiring interns!</span>
           <Link
             href="/internships"
@@ -61,13 +71,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                href="/coming-soon"
+                href={link.href}
                 title={link.title}
                 className="text-gray-700 hover:text-[#005250] transition"
               >
                 {link.name}
               </Link>
             ))}
+
             <Link
               href="/coming-soon"
               title="Sign up on Freshertoday"
@@ -123,7 +134,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              href="/coming-soon"
+              href={link.href}
               title={link.title}
               onClick={() => setIsOpen(false)}
               className="text-left hover:text-[#005250] transition"
