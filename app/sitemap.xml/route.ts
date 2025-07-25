@@ -1,5 +1,3 @@
-// app/sitemap.xml/route.ts
-
 export async function GET() {
   const baseUrl = 'https://www.freshertoday.in';
   const now = new Date().toISOString().split('T')[0];
@@ -16,17 +14,41 @@ export async function GET() {
     'coming-soon',
   ];
 
-  const urls = staticRoutes.map((slug) => {
-    const path = slug ? `/${slug}` : '';
-    const priority = slug === '' ? '1.0' : '0.8';
-    return `
+  const blogRoutes = [
+    'first-internship-guide-2025',
+    'resume-mistakes-for-freshers',
+    'best-job-websites-for-freshers',
+    'telephonic-interview-tips',
+    'internship-vs-fulltime-job',
+    'resume-no-experience-freshers',
+    'career-options-bca-bsc-grads',
+    'hr-questions-for-freshers-2025',
+    'wfh-internships-for-freshers',
+  ];
+
+  const urls = [
+    ...staticRoutes.map((slug) => {
+      const path = slug ? `/${slug}` : '';
+      const priority = slug === '' ? '1.0' : '0.8';
+      return `
   <url>
     <loc>${baseUrl}${path}</loc>
     <lastmod>${now}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${priority}</priority>
   </url>`;
-  });
+    }),
+
+    ...blogRoutes.map((slug) => {
+      return `
+  <url>
+    <loc>${baseUrl}/blog/${slug}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+    }),
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
