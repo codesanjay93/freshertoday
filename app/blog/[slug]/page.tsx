@@ -1,34 +1,42 @@
-import { notFound } from 'next/navigation'
-import { db } from '../../lib/firebaseAdmin'
-import Script from 'next/script';
-import Navbar from '@/app/components/navbar/Navbar';
-import { BlogData, BlogsRenderer } from '@/app/components/blog/BlogsRenderer';
-import Footer from '@/app/components/footer/Footer';
-import { BLOG_COLLECTION } from '@/app/constant/constant';
+import { notFound } from "next/navigation";
+import { db } from "../../lib/firebaseAdmin";
+import Script from "next/script";
+import Navbar from "@/app/components/navbar/Navbar";
+import { BlogData, BlogsRenderer } from "@/app/components/blog/BlogsRenderer";
+import Footer from "@/app/components/footer/Footer";
+import { BLOG_COLLECTION } from "@/app/constant/constant";
 
 export async function generateStaticParams() {
   return [
-    { slug: 'first-internship-guide-2025' },
-    { slug: 'resume-mistakes-for-freshers' },
-    { slug: 'best-job-websites-for-freshers' },
-    { slug: 'telephonic-interview-tips' },
-    { slug: 'internship-vs-fulltime-job' },
-    { slug: 'resume-no-experience-freshers' },
-    { slug: 'career-options-bca-bsc-grads' },
-    { slug: 'hr-questions-for-freshers-2025' },
-    { slug: 'wfh-internships-for-freshers' },
-  ]
+    { slug: "first-internship-guide-2025" },
+    { slug: "resume-mistakes-for-freshers" },
+    { slug: "best-job-websites-for-freshers" },
+    { slug: "telephonic-interview-tips" },
+    { slug: "internship-vs-fulltime-job" },
+    { slug: "resume-no-experience-freshers" },
+    { slug: "career-options-bca-bsc-grads" },
+    { slug: "hr-questions-for-freshers-2025" },
+    { slug: "wfh-internships-for-freshers" },
+    { slug: "fresher-vs-intern-differences" },
+    { slug: "best-job-portals-fresh-graduates" },
+    { slug: "direct-apply-vs-company-site" },
+    { slug: "compare-job-sites-freshers" },
+  ];
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   try {
     const snapshot = await db.collection(BLOG_COLLECTION).doc(slug).get();
     if (!snapshot.exists) return {};
     const blog = snapshot.data();
     const title = blog?.seo?.title || blog?.title;
-    const description = blog?.seo?.description || '';
-    const ogImage = blog?.seo?.ogImage || '';
+    const description = blog?.seo?.description || "";
+    const ogImage = blog?.seo?.ogImage || "";
     return {
       title,
       description,
@@ -37,10 +45,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description,
         url: `https://www.freshertoday.in/blog/${slug}`,
         images: [ogImage],
-        type: 'article',
+        type: "article",
       },
       twitter: {
-        card: 'summary_large_image',
+        card: "summary_large_image",
         title,
         description,
         images: [ogImage],
@@ -50,21 +58,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       },
     };
   } catch (err) {
-    console.error('Metadata Error:', err);
+    console.error("Metadata Error:", err);
     return {};
   }
 }
 
-export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   try {
     const snapshot = await db.collection(BLOG_COLLECTION).doc(slug).get();
     if (!snapshot.exists) return notFound();
     const blog = snapshot.data() as BlogData;
     if (!blog) return notFound();
-    const publishedAt = blog.publishedAt || '2025-01-01';
+    const publishedAt = blog.publishedAt || "2025-01-01";
     const updatedAt = blog.updatedAt || publishedAt;
-    const ogImage = blog.seo?.ogImage || '';
+    const ogImage = blog.seo?.ogImage || "";
     return (
       <article>
         {/* BlogPosting Structured Data */}
@@ -77,7 +89,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               headline: blog.title,
-              description: blog.seo?.description || '',
+              description: blog.seo?.description || "",
               image: ogImage,
               author: {
                 "@type": "Person",
@@ -135,7 +147,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
       </article>
     );
   } catch (err) {
-    console.error('Blog Page Error:', err);
+    console.error("Blog Page Error:", err);
     return notFound();
   }
 }

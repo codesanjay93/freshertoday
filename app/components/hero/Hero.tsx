@@ -13,16 +13,19 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Hero() {
+  const router = useRouter();
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [searchType, setSearchType] = useState("jobs"); // "jobs" or "internships"
 
   const handleSearch = () => {
-    alert("Coming soon!");
+    // alert("Coming soon!");
     setSearchType("jobs");
+    router.push('/fresher-jobs-in-bengaluru')
     // console.log("Searching for:", { jobTitle, location, searchType })
   };
 
@@ -177,16 +180,17 @@ export default function Hero() {
           </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {popularTags.map((tag, index) => (
-              <button
+              <Link
                 key={tag}
-                onClick={() => {
-                  alert("Coming soon!");
-                }}
+                // onClick={() => {
+                //   alert("Coming soon!");
+                // }}
+                href={`/fresher-jobs-in-bengaluru`}
                 className="group px-6 py-4 bg-white/70 backdrop-blur-sm hover:bg-gradient-to-r hover:from-violet-500 hover:to-purple-500 text-slate-700 hover:text-white rounded-full transition-all duration-300 border border-white/40 hover:border-transparent shadow-lg hover:shadow-xl transform hover:scale-105 font-medium text-base"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {tag}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
