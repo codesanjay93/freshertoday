@@ -153,7 +153,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={``}>{children}</body>
+      <body>
+        {children}</body>
     </html>
   );
 }

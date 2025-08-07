@@ -80,7 +80,7 @@ export default function Navbar() {
             ))}
 
             <Link
-              href="/coming-soon"
+              href="/register"
               title="Sign up on Freshertoday"
               className="text-white bg-gradient-to-r from-violet-600 via-purple-600 to-violet-600 px-5 py-1.5 rounded-full hover:opacity-90"
             >
