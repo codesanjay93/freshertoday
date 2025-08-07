@@ -5,6 +5,9 @@ export async function GET() {
   const staticRoutes = [
     '', // homepage
     'about',
+    'register',
+    'login',
+    'blogs',
     'contact',
     'internships',
     'learn-more',
@@ -24,6 +27,7 @@ export async function GET() {
     'career-options-bca-bsc-grads',
     'hr-questions-for-freshers-2025',
     'wfh-internships-for-freshers',
+    "fresher-jobs-in-bengaluru",
   ];
 
   const urls = [
