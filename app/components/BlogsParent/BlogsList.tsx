@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-export default function BlogsList({ blogs }: { blogs: { slug: string, title: string, description: string }[] }) {
+export default function BlogsList({ blogs }: { blogs: { slug: string, title: string}[] }) {
   return (
     <div className="space-y-6">
       {blogs.map((blog) => (
@@ -10,7 +10,6 @@ export default function BlogsList({ blogs }: { blogs: { slug: string, title: str
           <Link href={`/blog/${blog.slug}`}>
             <h2 className="text-xl font-semibold text-blue-600 hover:underline">{blog.title}</h2>
           </Link>
-          <p className="text-gray-600 mt-2">{blog.description}</p>
         </article>
       ))}
     </div>
