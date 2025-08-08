@@ -16,7 +16,7 @@ export default function Navbar() {
       href: "/blogs",
       title: "Read latest career blogs on Freshertoday",
     },
-    { name: "Internships", href: "/coming-soon", title: "Coming soon" },
+    { name: "Internships", href: "/internships", title: "Internships" },
     { name: "For Companies", href: "/coming-soon", title: "Coming soon" },
     {
       name: "Login",

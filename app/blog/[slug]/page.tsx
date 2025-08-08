@@ -5,24 +5,7 @@ import Navbar from "@/app/components/navbar/Navbar";
 import { BlogData, BlogsRenderer } from "@/app/components/blog/BlogsRenderer";
 import Footer from "@/app/components/footer/Footer";
 import { BLOG_COLLECTION } from "@/app/constant/constant";
-
-export async function generateStaticParams() {
-  return [
-    { slug: "first-internship-guide-2025" },
-    { slug: "resume-mistakes-for-freshers" },
-    { slug: "best-job-websites-for-freshers" },
-    { slug: "telephonic-interview-tips" },
-    { slug: "internship-vs-fulltime-job" },
-    { slug: "resume-no-experience-freshers" },
-    { slug: "career-options-bca-bsc-grads" },
-    { slug: "hr-questions-for-freshers-2025" },
-    { slug: "wfh-internships-for-freshers" },
-    { slug: "fresher-vs-intern-differences" },
-    { slug: "best-job-portals-fresh-graduates" },
-    { slug: "direct-apply-vs-company-site" },
-    { slug: "compare-job-sites-freshers" },
-  ];
-}
+import BlogLinks from "@/app/components/BlogsParent/BlogLinks";
 
 export async function generateMetadata({
   params,
@@ -74,9 +57,18 @@ export default async function BlogPage({
     if (!snapshot.exists) return notFound();
     const blog = snapshot.data() as BlogData;
     if (!blog) return notFound();
-    const publishedAt = blog.publishedAt || "2025-01-01";
-    const updatedAt = blog.updatedAt || publishedAt;
+
+    // Ensure dates are ISO strings with timezone
+    const publishedAt = blog.publishedAt
+      ? new Date(blog.publishedAt).toISOString()
+      : new Date("2025-01-01").toISOString();
+
+    const updatedAt = blog.updatedAt
+      ? new Date(blog.updatedAt).toISOString()
+      : publishedAt;
+
     const ogImage = blog.seo?.ogImage || "";
+
     return (
       <article>
         {/* BlogPosting Structured Data */}
@@ -90,10 +82,12 @@ export default async function BlogPage({
               "@type": "BlogPosting",
               headline: blog.title,
               description: blog.seo?.description || "",
-              image: ogImage,
+              image: ogImage || undefined,
               author: {
                 "@type": "Person",
                 name: "Sanjay Achari",
+                url: "https://www.freshertoday.in/sanjay-achari",
+                // image: "https://www.freshertoday.in/path-to-author-image.jpg" // optional
               },
               datePublished: publishedAt,
               dateModified: updatedAt,
@@ -143,6 +137,7 @@ export default async function BlogPage({
         />
         <Navbar />
         <BlogsRenderer blog={blog} />
+        <BlogLinks />
         <Footer />
       </article>
     );

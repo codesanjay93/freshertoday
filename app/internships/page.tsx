@@ -2,6 +2,7 @@ import React from 'react'
 import InternshipList from '../components/internships/Internships'
 import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
+import BlogLinks from '../components/BlogsParent/BlogLinks';
 
 export const metadata = {
   title: "Internships for Freshers in India | Freshertoday",
@@ -58,6 +59,7 @@ const page = () => {
     <div>
         <Navbar />
         <InternshipList />
+        <BlogLinks />
         <Footer />
     </div>
   )

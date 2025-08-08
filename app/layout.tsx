@@ -10,7 +10,7 @@ export const metadata = {
   author: "Freshertoday",
   robots: "index, follow",
   openGraph: {
-    title: "Freshertoday | Internships & Jobs for Freshers in India",
+    title: "freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Find your first job or internship with Freshertoday. Curated listings, direct apply options, and zero clutter.",
     url: "https://www.freshertoday.in",
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Freshertoday",
-    title: "Freshertoday | Internships & Jobs for Freshers in India",
+    site: "@freshertoday",
+    title: "freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Browse quality internships and fresher jobs. Built for Indian students and early professionals.",
     image: "https://www.freshertoday.in/logo.png",
@@ -122,7 +122,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Freshertoday",
+              name: "freshertoday",
               url: "https://www.freshertoday.in",
               logo: "https://www.freshertoday.in/logo.png",
               description: metadata.description,
@@ -132,12 +132,14 @@ export default function RootLayout({
                 contactType: "customer service",
               },
               sameAs: [
-                "https://www.instagram.com/freshertoday.in",
+                "https://www.linkedin.com/company/freshertoday",
+                "https://www.instagram.com/freshertoday",
                 "https://twitter.com/Freshertoday",
               ],
             }),
           }}
         />
+
 
         {/* ✅ Google Analytics */}
         <Script
