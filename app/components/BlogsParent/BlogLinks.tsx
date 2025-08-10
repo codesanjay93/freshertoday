@@ -16,6 +16,7 @@ export default async function BlogLinks() {
           {blogs.map((blog) => (
             <Link
               key={blog.slug}
+              title={blog.title}
               href={`/blog/${blog.slug}`}
               className="text-sm text-black hover:underline"
             >
