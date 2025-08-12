@@ -60,9 +60,7 @@ export default function RootLayout({
       <head>
         <meta name="author" content={metadata.author} />
         <meta name="robots" content={metadata.robots} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
-
         {/* ✅ Google Search Console verification */}
         <meta
           name="google-site-verification"
@@ -99,24 +97,15 @@ export default function RootLayout({
         />
         <meta name="twitter:image" content={metadata.twitter.image} />
 
-        <link
-          rel="alternate"
-          href="https://freshertoday.in/"
-          hrefLang="en"
-        />
-        <link
-          rel="alternate"
-          href="https://freshertoday.in/"
-          hrefLang="en-IN"
-        />
-        <link
-          rel="alternate"
-          href="https://freshertoday.in/"
-          hrefLang="x-default"
-        />
-
+      <link rel="alternate" href="https://freshertoday.in/" hrefLang="en-IN" />
+      <link rel="alternate" href="https://freshertoday.in/" hrefLang="x-default" />
+      <Script
+              src="https://analytics.ahrefs.com/analytics.js"
+              data-key="UQAthmzrH5KlpQGz7+tKHg"
+              async
+            />
         {/* ✅ Structured Data */}
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
