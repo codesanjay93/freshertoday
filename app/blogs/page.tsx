@@ -5,11 +5,40 @@ import Footer from "@/app/components/footer/Footer";
 import BlogsList from "../components/BlogsParent/BlogsList";
 import { getBlogsList } from "../lib/blog/getBlogList";
 
+// ✅ Static metadata for /blogs
+export const metadata = {
+  title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
+  description:
+    "Explore Freshertoday's blog for the latest career tips, job search strategies, and guides to help freshers succeed in their careers.",
+  openGraph: {
+    title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
+    description:
+      "Explore Freshertoday's blog for the latest career tips, job search strategies, and guides to help freshers succeed in their careers.",
+    url: "https://freshertoday.in/blogs",
+    type: "website",
+    images: ["https://freshertoday.in/logo.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
+    site: "@freshertodayin", // ✅ Your Twitter handle
+
+    description:
+      "Explore Freshertoday's blog for the latest career tips, job search strategies, and guides to help freshers succeed in their careers.",
+    images: ["https://freshertoday.in/logo.jpg"],
+  },
+  alternates: {
+    canonical: "https://freshertoday.in/blogs",
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default async function BlogsPage() {
-
-      const blogs = await getBlogsList();
-  
+  const blogs = await getBlogsList();
 
   return (
     <div>

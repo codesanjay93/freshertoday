@@ -13,31 +13,42 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const baseUrl = "https://freshertoday.in";
+  const blogUrl = `${baseUrl}/blog/${slug}`;
+
   try {
     const snapshot = await db.collection(BLOG_COLLECTION).doc(slug).get();
     if (!snapshot.exists) return {};
+
     const blog = snapshot.data();
-    const title = blog?.seo?.title || blog?.title;
-    const description = blog?.seo?.description || "";
-    const ogImage = blog?.seo?.ogImage || "";
+    const title = blog?.seo?.title || blog?.title || "Freshertoday Blog";
+    const description =
+      blog?.seo?.description ||
+      blog?.excerpt ||
+      "Career tips, job search advice, and fresh opportunities from Freshertoday.";
+    const ogImage =
+      blog?.seo?.ogImage || `${baseUrl}/default-og.jpg`;
+
     return {
       title,
       description,
       openGraph: {
         title,
         description,
-        url: `https://freshertoday.in/blog/${slug}`,
-        images: [ogImage],
+        url: blogUrl,
+        images: [{ url: ogImage }],
         type: "article",
       },
       twitter: {
         card: "summary_large_image",
+        site: "@freshertodayin", // ✅ Your Twitter handle
+        creator: "@freshertodayin",
         title,
         description,
         images: [ogImage],
       },
       alternates: {
-        canonical: `https://freshertoday.in/blog/${slug}`,
+        canonical: blogUrl,
       },
     };
   } catch (err) {
@@ -46,19 +57,27 @@ export async function generateMetadata({
   }
 }
 
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default async function BlogPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const baseUrl = "https://freshertoday.in";
+  const blogUrl = `${baseUrl}/blog/${slug}`;
+
   try {
     const snapshot = await db.collection(BLOG_COLLECTION).doc(slug).get();
     if (!snapshot.exists) return notFound();
     const blog = snapshot.data() as BlogData;
     if (!blog) return notFound();
 
-    // Ensure dates are ISO strings with timezone
     const publishedAt = blog.publishedAt
       ? new Date(blog.publishedAt).toISOString()
       : new Date("2025-01-01").toISOString();
@@ -87,7 +106,6 @@ export default async function BlogPage({
                 "@type": "Person",
                 name: "Sanjay Achari",
                 url: "https://freshertoday.in/sanjay-achari",
-                // image: "https://freshertoday.in/path-to-author-image.jpg" // optional
               },
               datePublished: publishedAt,
               dateModified: updatedAt,
@@ -99,10 +117,11 @@ export default async function BlogPage({
                   url: "https://freshertoday.in/logo.png",
                 },
               },
-              url: `https://freshertoday.in/blog/${slug}`,
+              url: blogUrl, // Match canonical
             }),
           }}
         />
+
         {/* Breadcrumb Structured Data */}
         <Script
           id="structured-data-breadcrumb"
@@ -117,24 +136,25 @@ export default async function BlogPage({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://freshertoday.in",
+                  item: baseUrl,
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Blog",
-                  item: "https://freshertoday.in/blog",
+                  item: `${baseUrl}/blog`,
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: blog.title,
-                  item: `https://freshertoday.in/blog/${slug}`,
+                  item: blogUrl,
                 },
               ],
             }),
           }}
         />
+
         <Navbar />
         <BlogsRenderer blog={blog} />
         <BlogLinks />

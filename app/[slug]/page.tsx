@@ -9,6 +9,11 @@ const staticSlugs = [
   "fresher-jobs-in-delhi",
 ];
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export async function generateStaticParams() {
   return staticSlugs.map((slug) => ({ slug }));
 }

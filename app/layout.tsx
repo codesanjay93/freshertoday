@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import "./globals.css";
 import Script from "next/script";
 
@@ -7,7 +8,7 @@ export const metadata = {
     "Freshertoday helps freshers in India find high-quality jobs and internships with ease. Apply directly or via trusted sources — curated, simple, and free.",
   keywords:
     "Freshertoday, fresher jobs, internships India, entry-level jobs, college internships, job board, student careers",
-  author: "Freshertoday",
+  authors: [{ name: "Freshertoday" }],
   robots: "index, follow",
   openGraph: {
     title: "freshertoday | Internships & Jobs for Freshers in India",
@@ -30,18 +31,14 @@ export const metadata = {
     title: "freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Browse quality internships and fresher jobs. Built for Indian students and early professionals.",
-    image: "https://freshertoday.in/logo.png",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "freshertoday",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://freshertoday.in/logo.png",
-    },
+    images: ["https://freshertoday.in/logo.png"],
   },
   alternates: {
     canonical: "https://freshertoday.in",
+    languages: {
+      "en-IN": "https://freshertoday.in",
+      "x-default": "https://freshertoday.in",
+    },
   },
 };
 
@@ -50,61 +47,30 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
+export default function RootLayout({ children } : {
+    children: ReactNode;
 }) {
   return (
     <html lang="en">
       <head>
-        <meta name="author" content={metadata.author} />
-        <meta name="robots" content={metadata.robots} />
-        <meta name="theme-color" content="#ffffff" />
-        {/* ✅ Google Search Console verification */}
+        {/* Google Search Console verification */}
         <meta
           name="google-site-verification"
           content="SvrjJ8IGUCQMNuQE6DEjL8pqkfvS6IR6-b3b9hKvLiY"
         />
 
-        {/* ✅ Favicon & App Icons */}
+        {/* Favicon & App Icons */}
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* ✅ Open Graph */}
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:type" content={metadata.openGraph.type} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content={metadata.openGraph.images[0].alt}
-        />
-
-        {/* ✅ Twitter */}
-        <meta name="twitter:card" content={metadata.twitter.card} />
-        <meta name="twitter:site" content={metadata.twitter.site} />
-        <meta name="twitter:title" content={metadata.twitter.title} />
-        <meta
-          name="twitter:description"
-          content={metadata.twitter.description}
-        />
-        <meta name="twitter:image" content={metadata.twitter.image} />
-
-      <link rel="alternate" href="https://freshertoday.in/" hrefLang="en-IN" />
-      <link rel="alternate" href="https://freshertoday.in/" hrefLang="x-default" />
+        {/* Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="UQAthmzrH5KlpQGz7+tKHg"
-          strategy="beforeInteractive"  
+          strategy="beforeInteractive"
         />
-        {/* ✅ Structured Data */}
+
+        {/* Structured Data */}
         <Script
           type="application/ld+json"
           id="structured-data-org"
@@ -130,8 +96,7 @@ export default function RootLayout({
           }}
         />
 
-
-        {/* ✅ Google Analytics */}
+        {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4MNK2647KX"
@@ -145,8 +110,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        {children}</body>
+      <body>{children}</body>
     </html>
   );
 }
