@@ -16,11 +16,11 @@ export const metadata = {
     title: "Internships for Freshers in India | Freshertoday",
     description:
       "Get access to industry-ready internships. No clutter, no spam — just career-building internships for freshers.",
-    url: "https://www.freshertoday.in/internships",
+    url: "https://freshertoday.in/internships",
     type: "website",
     images: [
       {
-        url: "https://www.freshertoday.in/logo.png",
+        url: "https://freshertoday.in/logo.png",
         width: 1200,
         height: 630,
         alt: "freshertoday Internships",
@@ -33,18 +33,18 @@ export const metadata = {
     title: "Internships for Freshers in India | Freshertoday",
     description:
       "Apply to skill-building internships and get certified. Perfect for students and freshers looking to grow their careers.",
-    image: "https://www.freshertoday.in/logo.png",
+    image: "https://freshertoday.in/logo.png",
   },
   publisher: {
     "@type": "Organization",
     name: "freshertoday",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.freshertoday.in/logo.png",
+      url: "https://freshertoday.in/logo.png",
     },
   },
   alternates: {
-    canonical: "https://www.freshertoday.in/internships",
+    canonical: "https://freshertoday.in/internships",
   },
 };
 

@@ -26,7 +26,7 @@ export async function generateMetadata({
       openGraph: {
         title,
         description,
-        url: `https://www.freshertoday.in/blog/${slug}`,
+        url: `https://freshertoday.in/blog/${slug}`,
         images: [ogImage],
         type: "article",
       },
@@ -37,7 +37,7 @@ export async function generateMetadata({
         images: [ogImage],
       },
       alternates: {
-        canonical: `https://www.freshertoday.in/blog/${slug}`,
+        canonical: `https://freshertoday.in/blog/${slug}`,
       },
     };
   } catch (err) {
@@ -86,8 +86,8 @@ export default async function BlogPage({
               author: {
                 "@type": "Person",
                 name: "Sanjay Achari",
-                url: "https://www.freshertoday.in/sanjay-achari",
-                // image: "https://www.freshertoday.in/path-to-author-image.jpg" // optional
+                url: "https://freshertoday.in/sanjay-achari",
+                // image: "https://freshertoday.in/path-to-author-image.jpg" // optional
               },
               datePublished: publishedAt,
               dateModified: updatedAt,
@@ -96,10 +96,10 @@ export default async function BlogPage({
                 name: "Freshertoday",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.freshertoday.in/logo.png",
+                  url: "https://freshertoday.in/logo.png",
                 },
               },
-              url: `https://www.freshertoday.in/blog/${slug}`,
+              url: `https://freshertoday.in/blog/${slug}`,
             }),
           }}
         />
@@ -117,19 +117,19 @@ export default async function BlogPage({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://www.freshertoday.in",
+                  item: "https://freshertoday.in",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Blog",
-                  item: "https://www.freshertoday.in/blog",
+                  item: "https://freshertoday.in/blog",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: blog.title,
-                  item: `https://www.freshertoday.in/blog/${slug}`,
+                  item: `https://freshertoday.in/blog/${slug}`,
                 },
               ],
             }),

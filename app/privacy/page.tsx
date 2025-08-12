@@ -9,7 +9,7 @@ export const metadata = {
   keywords:
     "Privacy Policy, Freshertoday privacy, data protection, student privacy, job seeker data",
   alternates: {
-    canonical: "https://www.freshertoday.in/privacy",
+    canonical: "https://freshertoday.in/privacy",
   },
 };
 
