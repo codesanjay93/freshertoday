@@ -107,6 +107,7 @@ export default function RootLayout({
         {/* ✅ Structured Data */}
         <Script
           type="application/ld+json"
+          id="structured-data-org"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
