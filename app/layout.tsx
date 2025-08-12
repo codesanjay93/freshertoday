@@ -13,11 +13,11 @@ export const metadata = {
     title: "freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Find your first job or internship with Freshertoday. Curated listings, direct apply options, and zero clutter.",
-    url: "https://www.freshertoday.in",
+    url: "https://freshertoday.in",
     type: "website",
     images: [
       {
-        url: "https://www.freshertoday.in/logo.png",
+        url: "https://freshertoday.in/logo.png",
         width: 1200,
         height: 630,
         alt: "freshertoday Job Board",
@@ -30,18 +30,18 @@ export const metadata = {
     title: "freshertoday | Internships & Jobs for Freshers in India",
     description:
       "Browse quality internships and fresher jobs. Built for Indian students and early professionals.",
-    image: "https://www.freshertoday.in/logo.png",
+    image: "https://freshertoday.in/logo.png",
   },
   publisher: {
     "@type": "Organization",
     name: "freshertoday",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.freshertoday.in/logo.png",
+      url: "https://freshertoday.in/logo.png",
     },
   },
   alternates: {
-    canonical: "https://www.freshertoday.in",
+    canonical: "https://freshertoday.in",
   },
 };
 
@@ -101,17 +101,17 @@ export default function RootLayout({
 
         <link
           rel="alternate"
-          href="https://www.freshertoday.in/"
+          href="https://freshertoday.in/"
           hrefLang="en"
         />
         <link
           rel="alternate"
-          href="https://www.freshertoday.in/"
+          href="https://freshertoday.in/"
           hrefLang="en-IN"
         />
         <link
           rel="alternate"
-          href="https://www.freshertoday.in/"
+          href="https://freshertoday.in/"
           hrefLang="x-default"
         />
 
@@ -123,8 +123,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "freshertoday",
-              url: "https://www.freshertoday.in",
-              logo: "https://www.freshertoday.in/logo.png",
+              url: "https://freshertoday.in",
+              logo: "https://freshertoday.in/logo.png",
               description: metadata.description,
               contactPoint: {
                 "@type": "ContactPoint",

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.freshertoday.in/sitemap.xml
+Sitemap: https://freshertoday.in/sitemap.xml
 
 # Specify default language
-Host: https://www.freshertoday.in
+Host: https://freshertoday.in

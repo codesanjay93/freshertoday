@@ -13,11 +13,11 @@ export const metadata = {
     title: "Contact Freshertoday | Support for Jobs & Internships",
     description:
       "Get in touch with Freshertoday for support, feedback, and collaboration opportunities. We're here to help freshers succeed.",
-    url: "https://www.freshertoday.in/contact",
+    url: "https://freshertoday.in/contact",
     type: "website",
     images: [
       {
-        url: "https://www.freshertoday.in/logo.png",
+        url: "https://freshertoday.in/logo.png",
         width: 1200,
         height: 630,
         alt: "Freshertoday Logo",
@@ -30,18 +30,18 @@ export const metadata = {
     title: "Contact Freshertoday | Help & Partnerships",
     description:
       "Questions or feedback? Contact the Freshertoday team for support, partnerships, or career inquiries.",
-    images: ["https://www.freshertoday.in/logo.png"],
+    images: ["https://freshertoday.in/logo.png"],
   },
   publisher: {
     "@type": "Organization",
     name: "Freshertoday",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.freshertoday.in/logo.png",
+      url: "https://freshertoday.in/logo.png",
     },
   },
   alternates: {
-    canonical: "https://www.freshertoday.in/contact",
+    canonical: "https://freshertoday.in/contact",
   },
 };
 

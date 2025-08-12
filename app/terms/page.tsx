@@ -9,7 +9,7 @@ export const metadata = {
   keywords:
     "Terms of Service, Freshertoday Terms, job board terms, internship platform terms",
   alternates: {
-    canonical: "https://www.freshertoday.in/terms",
+    canonical: "https://freshertoday.in/terms",
   },
 };
 

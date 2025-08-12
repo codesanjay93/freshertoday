@@ -10,7 +10,7 @@ function generateSEO(blog: {
   content?: string;
 }) {
   const description = blog.description || `Read this blog on ${blog.title}`;
-  const ogImage = blog.ogImage || 'https://www.freshertoday.in/logo.png';
+  const ogImage = blog.ogImage || 'https://freshertoday.in/logo.png';
 
   return {
     title: blog.title,
@@ -18,7 +18,7 @@ function generateSEO(blog: {
     openGraph: {
       title: blog.title,
       description,
-      url: `https://www.freshertoday.in/blog/${blog.slug}`,
+      url: `https://freshertoday.in/blog/${blog.slug}`,
       type: 'article',
       images: [
         {
@@ -36,7 +36,7 @@ function generateSEO(blog: {
       images: [ogImage],
     },
     alternates: {
-      canonical: `https://www.freshertoday.in/blog/${blog.slug}`,
+      canonical: `https://freshertoday.in/blog/${blog.slug}`,
     },
   };
 }

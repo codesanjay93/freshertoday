@@ -8,7 +8,7 @@ export function generateOtpEmail(otp: string) {
         <div style="max-width: 520px; margin: 0 auto; background: #ffffff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 30px;">
           
           <div style="text-align: center;">
-            <img src="https://www.freshertoday.in/logo.png" alt="Freshertoday Logo" style="height: 40px; margin-bottom: 20px;" />
+            <img src="https://freshertoday.in/logo.png" alt="Freshertoday Logo" style="height: 40px; margin-bottom: 20px;" />
             <h2 style="font-size: 22px; color: #222; margin-bottom: 10px;">One-Time Password (OTP)</h2>
             <p style="font-size: 14px; color: #555;">Use the OTP below to verify your email and complete your sign-up.</p>
           </div>

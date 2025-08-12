@@ -2,7 +2,7 @@ import { db } from '@/app/lib/firebaseAdmin';
 import { BLOG_COLLECTION } from '../constant/constant';
 
 export async function GET() {
-  const baseUrl = 'https://www.freshertoday.in';
+  const baseUrl = 'https://freshertoday.in';
   
   // To include local timezone offset like +05:30, we need to format manually
   function toLocalISOStringWithOffset(date: Date) {
