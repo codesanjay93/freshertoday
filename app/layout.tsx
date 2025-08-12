@@ -99,11 +99,11 @@ export default function RootLayout({
 
       <link rel="alternate" href="https://freshertoday.in/" hrefLang="en-IN" />
       <link rel="alternate" href="https://freshertoday.in/" hrefLang="x-default" />
-      <Script
-              src="https://analytics.ahrefs.com/analytics.js"
-              data-key="UQAthmzrH5KlpQGz7+tKHg"
-              async
-            />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="UQAthmzrH5KlpQGz7+tKHg"
+          strategy="beforeInteractive"  
+        />
         {/* ✅ Structured Data */}
         <Script
           type="application/ld+json"
