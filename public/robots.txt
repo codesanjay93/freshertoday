@@ -1,7 +1,11 @@
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: AhrefsSiteAudit
+Allow: /
+
 User-agent: *
 Allow: /
 
 Sitemap: https://freshertoday.in/sitemap.xml
 
-# Specify default language
-Host: https://freshertoday.in
