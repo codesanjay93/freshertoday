@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/go/linkedin",
+        destination: "https://www.linkedin.com/company/freshertoday",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -144,10 +144,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/freshertoday"
-                passHref
-                target="_blank"
-                rel="nofollow noopener noreferrer"
+                href="/go/linkedin"
                 title="Connect with us on LinkedIn"
                 className="text-gray-500 hover:text-[#005250]"
               >
