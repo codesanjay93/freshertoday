@@ -14,6 +14,7 @@ export const metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Internships for Freshers in India | Freshertoday",
+    siteName: "freshertoday",
     description:
       "Get access to industry-ready internships. No clutter, no spam — just career-building internships for freshers.",
     url: "https://freshertoday.in/internships",

@@ -13,6 +13,7 @@ export const metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Why Internships Matter for Freshers | Learn More | Freshertoday",
+    siteName: "freshertoday",
     description:
       "Explore the long-term benefits of internships for freshers. Real-world skills, certificates, and clarity — all start with internships.",
     url: "https://freshertoday.in/learn-more",

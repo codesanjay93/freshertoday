@@ -6,7 +6,8 @@ export const metadata = {
   title: "Privacy Policy – Freshertoday",
   description:
     "Learn how Freshertoday collects, uses, and protects your data when you visit our job and internship platform.",
-  keywords:
+    // siteName: "freshertoday",
+    keywords:
     "Privacy Policy, Freshertoday privacy, data protection, student privacy, job seeker data",
   alternates: {
     canonical: "https://freshertoday.in/privacy",

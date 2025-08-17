@@ -22,8 +22,9 @@ export async function generateMetadata({
 
     const blog = snapshot.data();
     const title = blog?.seo?.title || blog?.title || "Freshertoday Blog";
+    const siteName = "freshertoday";
     const description =
-      blog?.seo?.description ||
+    blog?.seo?.description ||
       blog?.excerpt ||
       "Career tips, job search advice, and fresh opportunities from Freshertoday.";
     const ogImage =
@@ -34,6 +35,7 @@ export async function generateMetadata({
       description,
       openGraph: {
         title,
+        siteName,
         description,
         url: blogUrl,
         images: [{ url: ogImage }],

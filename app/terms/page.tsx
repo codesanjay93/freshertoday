@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/Navbar";
 // pages/terms.tsx
 export const metadata = {
   title: "Terms of Service – Freshertoday",
+  // siteName: "freshertoday",
   description:
     "Read the terms of using Freshertoday. Understand your rights and responsibilities as a job seeker or visitor on our platform.",
   keywords:

@@ -11,8 +11,9 @@ export const metadata = {
     "Sanjay Achari is the founder & CEO of Freshertoday, a startup helping freshers in India land jobs and internships with ease. Learn more about his vision, journey, and mission.",
   keywords:
     "Sanjay Achari, Freshertoday founder, CEO Freshertoday, Sanjay Achari startup, job board India, internships for students",
-  openGraph: {
-    title: "Sanjay Achari – Founder of Freshertoday",
+    openGraph: {
+      title: "Sanjay Achari – Founder of Freshertoday",
+      siteName: "freshertoday",
     description:
       "Discover the story of Sanjay Achari, the founder behind Freshertoday — India's emerging platform for fresher jobs and internships.",
     url: "https://freshertoday.in/sanjay-achari",

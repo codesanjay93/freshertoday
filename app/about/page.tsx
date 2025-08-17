@@ -9,9 +9,10 @@ export const metadata = {
     "Learn about Freshertoday – a bootstrapped platform helping Indian freshers find curated jobs and internships easily.",
   keywords:
     "Freshertoday, about Freshertoday, fresher jobs, internships India, student careers, job board, entry-level jobs, campus recruitment, freshers startup",
-  openGraph: {
-    title: "About Freshertoday | India’s Job & Internship Platform for Freshers",
-    description:
+    openGraph: {
+      title: "About Freshertoday | India’s Job & Internship Platform for Freshers",
+      siteName: "freshertoday",
+      description:
       "Freshertoday is a startup helping freshers get their first job or internship. Learn about our mission and story.",
     url: "https://freshertoday.in/about",
     type: "website",

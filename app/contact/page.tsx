@@ -9,7 +9,8 @@ export const metadata = {
     "Need help or have a partnership query? Contact Freshertoday – your trusted job and internship platform for freshers in India.",
   keywords:
     "Freshertoday contact, contact job board, internship queries, fresher helpdesk, support freshertoday, partnership Freshertoday, fresher job contact",
-  openGraph: {
+    siteName: "freshertoday",
+    openGraph: {
     title: "Contact Freshertoday | Support for Jobs & Internships",
     description:
       "Get in touch with Freshertoday for support, feedback, and collaboration opportunities. We're here to help freshers succeed.",

@@ -10,8 +10,9 @@ export const metadata = {
   title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
   description:
     "Explore Freshertoday's blog for the latest career tips, job search strategies, and guides to help freshers succeed in their careers.",
-  openGraph: {
-    title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
+    openGraph: {
+      title: "Freshertoday Blog | Career Tips, Job Insights & Guides",
+      siteName: "freshertoday",
     description:
       "Explore Freshertoday's blog for the latest career tips, job search strategies, and guides to help freshers succeed in their careers.",
     url: "https://freshertoday.in/blogs",

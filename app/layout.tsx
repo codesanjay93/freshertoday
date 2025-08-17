@@ -5,16 +5,19 @@ import Script from "next/script";
 export const metadata = {
   title: "freshertoday | Internships & Jobs for Freshers in India",
   description:
-    "Freshertoday helps freshers in India find high-quality jobs and internships with ease. Apply directly or via trusted sources — curated, simple, and free.",
+    "freshertoday helps freshers in India find high-quality jobs and internships with ease. Apply directly or via trusted sources — curated, simple, and free.",
   keywords:
-    "Freshertoday, fresher jobs, internships India, entry-level jobs, college internships, job board, student careers",
-  authors: [{ name: "Freshertoday" }],
+    "freshertoday, fresher jobs, internships India, entry-level jobs, college internships, job board, student careers",
+  authors: [{ name: "freshertoday" }],
   robots: "index, follow",
   openGraph: {
     title: "freshertoday | Internships & Jobs for Freshers in India",
+    siteName: "freshertoday",
     description:
-      "Find your first job or internship with Freshertoday. Curated listings, direct apply options, and zero clutter.",
+      "Find your first job or internship with freshertoday. Curated listings, direct apply options, and zero clutter.",
     url: "https://freshertoday.in",
+
+
     type: "website",
     images: [
       {
@@ -90,7 +93,7 @@ export default function RootLayout({ children } : {
               sameAs: [
                 "https://www.linkedin.com/company/freshertoday",
                 "https://www.instagram.com/freshertoday",
-                "https://twitter.com/Freshertoday",
+                "https://twitter.com/freshertoday",
               ],
             }),
           }}
