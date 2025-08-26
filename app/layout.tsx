@@ -125,6 +125,14 @@ export default function RootLayout({ children } : {
             })(window, document, "clarity", "script", "szuxm9hj84");`,
           }}
         />
+
+        {/* ADSense */}
+         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-2924366410962579"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         
       </head>
       <body>{children}</body>
