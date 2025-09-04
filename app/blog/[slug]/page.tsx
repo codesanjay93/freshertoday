@@ -29,6 +29,11 @@ export async function generateMetadata({
       "Career tips, job search advice, and fresh opportunities from Freshertoday.";
     const ogImage =
       blog?.seo?.ogImage || `${baseUrl}/default-og.jpg`;
+      const publisher = {
+    name: "Freshertoday",
+    url: "https://freshertoday.in",
+    logo: "https://freshertoday.in/logo.png",
+  };
 
     return {
       title,
@@ -52,6 +57,7 @@ export async function generateMetadata({
       alternates: {
         canonical: blogUrl,
       },
+      publisher,
     };
   } catch (err) {
     console.error("Metadata Error:", err);

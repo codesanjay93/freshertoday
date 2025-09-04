@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.56.1",
     "bcryptjs": "^3.0.2",
     "crypto-js": "^4.2.0",
     "firebase": "^12.0.0",

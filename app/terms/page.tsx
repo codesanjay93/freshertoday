@@ -12,6 +12,11 @@ export const metadata = {
   alternates: {
     canonical: "https://freshertoday.in/terms",
   },
+    publisher: {
+    name: "Freshertoday",
+    url: "https://freshertoday.in",
+    logo: "https://freshertoday.in/logo.png",
+  },
 };
 
 export default function TermsPage() {

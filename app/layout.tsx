@@ -3,39 +3,43 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: "freshertoday | Internships & Jobs for Freshers in India",
+  title: "Freshertoday | Fresher Jobs & Internships in India",
   description:
-    "freshertoday helps freshers in India find high-quality jobs and internships with ease. Apply directly or via trusted sources — curated, simple, and free.",
+    "Discover the latest fresher jobs and internships across IT, Marketing, Engineering, and more. Apply directly or via trusted companies — simple, curated, and free with Freshertoday.",
+  
+  // ❌ Google ignores this, but if you want to keep it, reduce stuffing
   keywords:
-    "freshertoday, fresher jobs, internships India, entry-level jobs, college internships, job board, student careers",
-  authors: [{ name: "freshertoday" }],
+    "fresher jobs, internships India, entry-level jobs, graduate jobs, campus placement, student careers, IT fresher jobs, engineering jobs, marketing internships, paid internships, work from home internships",
+
+  authors: [{ name: "Freshertoday" }],
   robots: "index, follow",
+
   openGraph: {
-    title: "freshertoday | Internships & Jobs for Freshers in India",
-    siteName: "freshertoday",
+    title: "Freshertoday | Fresher Jobs & Internships in India",
+    siteName: "Freshertoday",
     description:
-      "Find your first job or internship with freshertoday. Curated listings, direct apply options, and zero clutter.",
+      "Find your first job or internship in India with Freshertoday. Curated listings, direct apply options, and zero clutter.",
     url: "https://freshertoday.in",
-
-
     type: "website",
     images: [
       {
         url: "https://freshertoday.in/logo.png",
         width: 1200,
         height: 630,
-        alt: "freshertoday Job Board",
+        alt: "Freshertoday Job Board",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     site: "@freshertoday",
-    title: "freshertoday | Internships & Jobs for Freshers in India",
+    title: "Freshertoday | Fresher Jobs & Internships in India",
     description:
-      "Browse quality internships and fresher jobs. Built for Indian students and early professionals.",
+      "Browse quality fresher jobs and internships in India. Built for students and early professionals.",
     images: ["https://freshertoday.in/logo.png"],
   },
+
   alternates: {
     canonical: "https://freshertoday.in",
     languages: {
@@ -43,16 +47,72 @@ export const metadata = {
       "x-default": "https://freshertoday.in",
     },
   },
+
+  // ✅ Updated publisher (modern, not Google+ legacy)
+  publisher: {
+    name: "Freshertoday",
+    url: "https://freshertoday.in",
+    logo: "https://freshertoday.in/logo.png",
+  },
 };
+
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({ children } : {
-    children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://freshertoday.in/#organization",
+        "name": "freshertoday",
+        "url": "https://freshertoday.in",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://freshertoday.in/#logo",
+          "url": "https://freshertoday.in/logo.png",
+          "width": 1200,
+          "height": 630
+        },
+        "description": metadata.description,
+        "sameAs": [
+          "https://www.linkedin.com/company/freshertoday",
+          "https://www.instagram.com/freshertoday",
+          "https://twitter.com/freshertoday"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+91-7676997759",
+            "contactType": "customer service"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://freshertoday.in/#website",
+        "url": "https://freshertoday.in",
+        "name": "freshertoday",
+        "alternateName": metadata.title,
+        "publisher": { "@id": "https://freshertoday.in/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://freshertoday.in/#webpage",
+        "url": "https://freshertoday.in",
+        "name": metadata.title,
+        "isPartOf": { "@id": "https://freshertoday.in/#website" },
+        "primaryImageOfPage": { "@id": "https://freshertoday.in/#logo" },
+        "description": metadata.description,
+        "publisher": { "@id": "https://freshertoday.in/#organization" }
+      }
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
@@ -66,37 +126,18 @@ export default function RootLayout({ children } : {
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* Ahrefs Analytics */}
+        {/* Ahrefs Analytics (keeps using next/script) */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="UQAthmzrH5KlpQGz7+tKHg"
           strategy="beforeInteractive"
         />
 
-        {/* Structured Data */}
-        <Script
+        {/* <-- SERVER-SIDE JSON-LD: plain <script> so it appears in initial HTML --> */}
+        <script
           type="application/ld+json"
-          id="structured-data-org"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "freshertoday",
-              url: "https://freshertoday.in",
-              logo: "https://freshertoday.in/logo.png",
-              description: metadata.description,
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+91-7676997759",
-                contactType: "customer service",
-              },
-              sameAs: [
-                "https://www.linkedin.com/company/freshertoday",
-                "https://www.instagram.com/freshertoday",
-                "https://twitter.com/freshertoday",
-              ],
-            }),
-          }}
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
 
         {/* Google Analytics */}
@@ -113,7 +154,7 @@ export default function RootLayout({ children } : {
           `}
         </Script>
 
-         {/* Microsoft Clarity */}
+        {/* Microsoft Clarity */}
         <Script
           id="microsoft-clarity"
           strategy="afterInteractive"
@@ -127,13 +168,12 @@ export default function RootLayout({ children } : {
         />
 
         {/* ADSense */}
-         <Script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-2924366410962579"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        
       </head>
       <body>{children}</body>
     </html>

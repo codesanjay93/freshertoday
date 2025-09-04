@@ -31,6 +31,11 @@ export const metadata = {
   alternates: {
     canonical: "https://freshertoday.in/blogs",
   },
+    publisher: {
+    name: "Freshertoday",
+    url: "https://freshertoday.in",
+    logo: "https://freshertoday.in/logo.png",
+  },
 };
 
 export const viewport = {
