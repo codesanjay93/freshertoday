@@ -1,24 +1,24 @@
 // app/api/blogs/route.ts
 
-// import { NextResponse } from 'next/server';
-// import { db } from '../../lib/firebaseAdmin'; // adjust path if needed
-// import { BLOG_COLLECTION } from '@/app/constant/constant';
+import { NextResponse } from 'next/server';
+import { db } from '../../lib/firebaseAdmin'; // adjust path if needed
+import { BLOG_COLLECTION } from '@/app/constant/constant';
 
-// export async function GET() {
-//   try {
-//     const snapshot = await db.collection(BLOG_COLLECTION).get();
+export async function GET() {
+  try {
+    const snapshot = await db.collection(BLOG_COLLECTION).get();
 
-//     const blogs = snapshot.docs.map(doc => ({
-//       id: doc.id,
-//       ...doc.data(),
-//     }));
+    const blogs = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
 
-//     return NextResponse.json({ blogs });
-//   } catch (error) {
-//     console.error('Firebase Error:', error);
-//     return NextResponse.json({ error: 'Failed to fetch blogs' }, { status: 500 });
-//   }
-// }
+    return NextResponse.json({ blogs });
+  } catch (error) {
+    console.error('Firebase Error:', error);
+    return NextResponse.json({ error: 'Failed to fetch blogs' }, { status: 500 });
+  }
+}
 
 
 // export async function GET() {
@@ -58,47 +58,47 @@
 
 
 // SUPABASE
-import { NextResponse } from 'next/server'
-import { supabase } from '../../lib/supabaseServer/supabaseServer'
-import { BLOG_COLLECTION } from '@/app/constant/constant'
+// import { NextResponse } from 'next/server'
+// import { supabase } from '../../lib/supabaseServer/supabaseServer'
+// import { BLOG_COLLECTION } from '@/app/constant/constant'
 
-// GET blogs
-export async function GET() {
-  try {
-    const { data: blogs, error } = await supabase
-      .from('blogs')
-      .select('*')
+// // GET blogs
+// export async function GET() {
+//   try {
+//     const { data: blogs, error } = await supabase
+//       .from('blogs')
+//       .select('*')
 
-    if (error) {
-      console.error('Supabase Error:', error.message)
-      return NextResponse.json({ error: 'Failed to fetch blogs' }, { status: 500 })
-    }
+//     if (error) {
+//       console.error('Supabase Error:', error.message)
+//       return NextResponse.json({ error: 'Failed to fetch blogs' }, { status: 500 })
+//     }
 
-    return NextResponse.json({ blogs })
-  } catch (error) {
-    console.error('Unexpected Error:', error)
-    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
-  }
-}
+//     return NextResponse.json({ blogs })
+//   } catch (error) {
+//     console.error('Unexpected Error:', error)
+//     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 })
+//   }
+// }
 
 
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
+// export async function POST(req: Request) {
+//   try {
+//     const body = await req.json();
 
-    const { data, error } = await supabase
-      .from("blogs")
-      .insert([{ name: body.name }])
-      .select(); // ensures data is returned after insert
+//     const { data, error } = await supabase
+//       .from("blogs")
+//       .insert([{ name: body.name }])
+//       .select(); // ensures data is returned after insert
 
-    if (error || !data) {
-      console.error("Supabase Insert Error:", error?.message);
-      return NextResponse.json({ error: "Failed to add blog" }, { status: 500 });
-    }
+//     if (error || !data) {
+//       console.error("Supabase Insert Error:", error?.message);
+//       return NextResponse.json({ error: "Failed to add blog" }, { status: 500 });
+//     }
 
-    return NextResponse.json({ blog: data[0] }); // safe now
-  } catch (error) {
-    console.error("Unexpected Error:", error);
-    return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
-  }
-}
+//     return NextResponse.json({ blog: data[0] }); // safe now
+//   } catch (error) {
+//     console.error("Unexpected Error:", error);
+//     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
+//   }
+// }
