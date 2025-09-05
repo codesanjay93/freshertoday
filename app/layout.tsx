@@ -121,6 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           name="google-site-verification"
           content="SvrjJ8IGUCQMNuQE6DEjL8pqkfvS6IR6-b3b9hKvLiY"
         />
+        {/* <link rel="preload" as="script" href="" /> */}
 
         {/* Favicon & App Icons */}
         <link rel="icon" href="/favicon.png" type="image/png" />
