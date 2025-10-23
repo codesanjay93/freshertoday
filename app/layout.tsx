@@ -2,12 +2,12 @@ import { ReactNode } from "react";
 import "./globals.css";
 import Script from "next/script";
 
+// ✅ Updated Title and Meta Info for Stronger Branding
 export const metadata = {
   title: "Freshertoday | Fresher Jobs & Internships in India",
   description:
     "Discover the latest fresher jobs and internships across IT, Marketing, Engineering, and more. Apply directly or via trusted companies — simple, curated, and free with Freshertoday.",
-  
-  // ❌ Google ignores this, but if you want to keep it, reduce stuffing
+
   keywords:
     "fresher jobs, internships India, entry-level jobs, graduate jobs, campus placement, student careers, IT fresher jobs, engineering jobs, marketing internships, paid internships, work from home internships",
 
@@ -16,7 +16,7 @@ export const metadata = {
 
   openGraph: {
     title: "Freshertoday | Fresher Jobs & Internships in India",
-    siteName: "Freshertoday",
+    siteName: "Freshertoday", // ✅ Reinforces brand name for Google & OG
     description:
       "Find your first job or internship in India with Freshertoday. Curated listings, direct apply options, and zero clutter.",
     url: "https://freshertoday.in",
@@ -48,7 +48,6 @@ export const metadata = {
     },
   },
 
-  // ✅ Updated publisher (modern, not Google+ legacy)
   publisher: {
     name: "Freshertoday",
     url: "https://freshertoday.in",
@@ -56,20 +55,20 @@ export const metadata = {
   },
 };
 
-
 export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  // ✅ Fixed capitalization in schema.org data ("Freshertoday" instead of lowercase)
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
         "@id": "https://freshertoday.in/#organization",
-        "name": "freshertoday",
+        "name": "Freshertoday", // ✅ Capitalized for brand identity
         "url": "https://freshertoday.in",
         "logo": {
           "@type": "ImageObject",
@@ -96,7 +95,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "@type": "WebSite",
         "@id": "https://freshertoday.in/#website",
         "url": "https://freshertoday.in",
-        "name": "freshertoday",
+        "name": "Freshertoday", // ✅ Changed from "freshertoday" to "Freshertoday"
         "alternateName": metadata.title,
         "publisher": { "@id": "https://freshertoday.in/#organization" }
       },
@@ -116,32 +115,35 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Search Console verification */}
+        {/* ✅ Google Search Console verification */}
         <meta
           name="google-site-verification"
           content="SvrjJ8IGUCQMNuQE6DEjL8pqkfvS6IR6-b3b9hKvLiY"
         />
-        {/* <link rel="preload" as="script" href="" /> */}
 
-        {/* Favicon & App Icons */}
+        {/* ✅ Favicon & App Icons */}
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* Ahrefs Analytics (keeps using next/script) */}
+        {/* ✅ Added explicit meta tags to force brand name recognition */}
+        <meta property="og:site_name" content="Freshertoday" /> 
+        <meta name="application-name" content="Freshertoday" />
+        <meta name="apple-mobile-web-app-title" content="Freshertoday" />
+
+        {/* ✅ Ahrefs Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="UQAthmzrH5KlpQGz7+tKHg"
           strategy="beforeInteractive"
         />
 
-        {/* <-- SERVER-SIDE JSON-LD: plain <script> so it appears in initial HTML --> */}
+        {/* ✅ JSON-LD Schema */}
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
 
-        {/* Google Analytics */}
+        {/* ✅ Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4MNK2647KX"
@@ -155,7 +157,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           `}
         </Script>
 
-        {/* Microsoft Clarity */}
+        {/* ✅ Microsoft Clarity */}
         <Script
           id="microsoft-clarity"
           strategy="afterInteractive"
@@ -168,7 +170,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
 
-        {/* ADSense */}
+        {/* ✅ Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-2924366410962579"
